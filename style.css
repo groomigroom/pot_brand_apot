@@ -83,6 +83,10 @@ div.container {
     width: 100%;
     height: 100px;
     background-color: #f4e9e9;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 999;
 }
 
 header {
@@ -127,29 +131,65 @@ nav {
     color: #f76670;
 }
 
-
-
-.slide {
-    width: 100%;
-    height: 500px;
+.page_main {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.slide_img {
+.slide {
     width: 1400px;
     height: 500px;
     margin: 0 auto;
-    background: url('./img/apotslide-img.jpg');
-    position: relative;
+    overflow: hidden;
 }
 
-.slide_img>p {
+.slide p {
     position: absolute;
-    margin: 35px;
+
     font-size: 21px;
     font-family: 'Pretendard';
     font-weight: 500;
     letter-spacing: -0.02em;
     line-height: 21px;
+}
+
+.slide_train {
+    width: 1400px;
+    height: 1500px;
+    transition: all 0.6s ease 0s;
+}
+
+.slide_img {
+    width: 1400px;
+    height: 500px;
+    background: url('./img/apotslide-img.jpg');
+    position: relative;
+}
+
+.slide_img>p {
+    top: 35px;
+    left: 35px;
+}
+
+.slide_img_two {
+    width: 1400px;
+    height: 500px;
+    background: url('./img/apot-slide-2-yong.jpg');
+    position: relative;
+}
+
+.slide_img_two>p {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.slide_img_three {
+    width: 1400px;
+    height: 500px;
+    position: relative;
 }
 
 .event {
@@ -199,7 +239,7 @@ nav {
     top: 98.5px;
 }
 
-.event_background{
+.event_background {
     width: 1400px;
     height: 250px;
 }
@@ -220,7 +260,6 @@ nav {
     top: 50%;
     transform: translateY(-50%);
     outline: none;
-
 }
 
 .pre_btn object {
@@ -279,15 +318,7 @@ nav {
     margin-top: 35px;
     width: 170px;
     height: 170px;
-
-}
-
-.goodslider>p {
-    font-family: 'Pretendard';
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    line-height: 16px;
-    margin-bottom: 17.5px;
+    transition: all 0.3s ease 0s;
 }
 
 .goodslider button {
@@ -299,7 +330,13 @@ nav {
     font-family: 'Pretendard';
     font-weight: 500;
     letter-spacing: -0.02em;
-    line-height: 13px;
+    line-height: 10px;
+    color: #f1f1f1;
+    cursor: pointer;
+}
+
+.goodslider button:hover {
+    background-color: #333333;
 }
 
 .goodslider>p {
@@ -307,6 +344,13 @@ nav {
     font-family: 'Pretendard';
     font-weight: 500;
     letter-spacing: -0.02em;
+    margin-bottom: 17.5px;
+}
+
+.goodslider:hover>img {
+    margin-top: 15px;
+    width: 190px;
+    height: 190px;
 }
 
 .introduce_div {
@@ -352,13 +396,13 @@ nav {
     width: 1400px;
     height: 400px;
     margin: 0 auto;
+    background-color: #f2f2f2;
 }
 
 .youtube_video_inside {
     width: 711px;
     height: 400px;
     margin: 0 auto;
-    background-color: blanchedalmond;
     position: relative;
 }
 
@@ -367,7 +411,6 @@ nav {
     height: 42px;
     background-color: #333333;
     color: #f4e9e9;
-
 }
 
 .youtube_video_top>p {
@@ -390,13 +433,14 @@ nav {
     transform: translate(-50%, -50%);
     opacity: 0.5;
     transition: all 0.6s ease 0s;
+    cursor: pointer;
 }
 
-.youtube_video_inside>h2:hover{
+.youtube_video_inside>h2:hover {
     opacity: 1;
 }
 
-.youtube_video_background{
+.youtube_video_background {
     width: 711px;
     height: 400px;
 }
