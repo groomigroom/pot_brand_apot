@@ -28,14 +28,22 @@ rightBtn.addEventListener('click', () => {
 });
 
 const mainmenu = document.querySelectorAll('.main-menu>li');
-const headerlogo = document.querySelector('.headerlogo')
-mainmenu.forEach(item => {
+const headerlogo = document.querySelector('.headerlogo');
+mainmenu.forEach((item) => {
     item.addEventListener('click', () => {
-        mainmenu.forEach(li => li.classList.remove('active'));
+        mainmenu.forEach((li) => li.classList.remove('active'));
         item.classList.add('active');
     });
-headerlogo.addEventListener('click', function(){
-    mainmenu.forEach(li => li.classList.remove('active'));
+    headerlogo.addEventListener('click', function () {
+        mainmenu.forEach((li) => li.classList.remove('active'));
+    });
 });
-});
-
+const train = document.querySelector('.slide_train');
+let count = 0;
+setInterval(function () {
+    count++;
+    if (count > 2) {
+        count = 0;
+    }
+    train.style.transform = `translateY(${-500 * count}px)`;
+}, 4000);
